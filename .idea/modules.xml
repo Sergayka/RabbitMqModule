@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/RabbitMqModule.iml" filepath="$PROJECT_DIR$/.idea/RabbitMqModule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../VRmsfs/.idea/VRmsfs.iml" filepath="$PROJECT_DIR$/../VRmsfs/.idea/VRmsfs.iml" />
+    </modules>
+  </component>
+</project>
