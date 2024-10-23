@@ -1,10 +1,12 @@
 package rabbitmq
 
 type RabbitMQConfig struct {
-	URI        string
-	Exchange   string
-	Queue      string
-	RoutingKey string
+	URI         string
+	Exchange    string
+	RoutingKey  string
+	Queue       string
+	DLXExchange string
+	DLXKey      string
 }
 
 type Task struct {
