@@ -14,13 +14,13 @@ func PublishTask(config RabbitMQConfig, task Task) error {
 	if err != nil {
 		return fmt.Errorf("failed to connect to RabbitMQ: %v", err)
 	}
-	conn.Close()
+	defer conn.Close()
 
 	ch, err := conn.Channel()
 	if err != nil {
 		return fmt.Errorf("failed to open a channel: %v", err)
 	}
-	ch.Close()
+	defer ch.Close()
 
 	err = ch.ExchangeDeclarePassive(
 		config.Exchange, // name of exchange
@@ -66,13 +66,13 @@ func ConsumeTask(config RabbitMQConfig) error {
 	if err != nil {
 		return err
 	}
-	conn.Close()
+	defer conn.Close()
 
 	ch, err := conn.Channel()
 	if err != nil {
 		return err
 	}
-	ch.Close()
+	defer ch.Close()
 
 	// checking the queue passively
 	q, err := ch.QueueDeclarePassive(
