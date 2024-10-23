@@ -92,9 +92,9 @@ func ConsumeTask(config RabbitMQConfig) error {
 
 	// linking the queue to exchange
 	err = ch.QueueBind(
-		q.Name,                 // queue name
-		"",                     // routing key
-		"msfs.output.exchange", // exchange
+		q.Name,          // queue name
+		"",              // routing key
+		config.Exchange, // exchange
 		false,
 		nil,
 	)
